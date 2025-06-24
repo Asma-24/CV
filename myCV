@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resume - Asma Almurjan</title>
+<style>
+body {
+font-family: 'Segoe UI', sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+color: #333;
+}
+
+header {
+background-color: #4B0082;
+color: white;
+padding: 40px 20px;
+text-align: center;
+}
+
+header h1 {
+margin: 0;
+}
+
+section {
+padding: 20px;
+margin: 20px;
+background-color: white;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+color: #4B0082;
+margin-bottom: 10px;
+}
+
+ul {
+list-style: none;
+padding: 0;
+}
+
+ul li::before {
+content: "• ";
+color: #4B0082;
+}
+
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+footer {
+text-align: center;
+padding: 10px;
+font-size: 12px;
+color: #888;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Asma Almurjan</h1>
+<p>Information Technology Student | Web Developer | UX Enthusiast</p>
+</header>
+
+<section>
+<h2>Contact Information</h2>
+<div class="contact-info">
+<span>📧 asma@example.com</span>
+<span>📱 0501234567</span>
+<span>🌐 github.com/asma-codes</span>
+</div>
+</section>
+
+<section>
+<h2>Career Objective</h2>
+<p>
+Seeking to build a career in web development and user experience by applying my academic skills in real projects and developing innovative technical solutions.
+</p>
+</section>
+
+<section>
+<h2>Skills</h2>
+<ul>
+<li>HTML, CSS, JavaScript</li>
+<li>User Interface Design (UI/UX)</li>
+<li>Git and GitHub</li>
+<li>Requirements Analysis</li>
+<li>Software Project Management</li>
+</ul>
+</section>
+
+<section>
+<h2>Experience / Projects</h2>
+<ul>
+<li>CaféGo Project – University Cafeteria Pre-order App</li>
+<li>This Resume Website (HTML + GitHub Pages)</li>
+<li>Information Management System for a Hospital (Software Engineering Course Project)</li>
+</ul>
+</section>
+
+<section>
+<h2>Education</h2>
+<ul>
+<li>Bachelor of Information Technology – Imam Abdulrahman Bin Faisal University</li>
+<li>Major: Information Systems | GPA: 4.0 / 5</li>
+</ul>
+</section>
+
+<footer>
+&copy; 2025 - Designed and Developed by Asma Almurjan 💜
+</footer>
+
+</body>
+</html>
