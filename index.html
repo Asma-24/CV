@@ -1,119 +1,176 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Resume - Asma Almurjan</title>
-<style>
-body {
-font-family: 'Segoe UI', sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f4f4f4;
-color: #333;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Asma Almurjan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-header {
-background-color: #4B0082;
-color: white;
-padding: 40px 20px;
-text-align: center;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(120deg, #f4f4f4, #e0e0ff);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-header h1 {
-margin: 0;
-}
+    header {
+      background: linear-gradient(to right, #4B0082, #8A2BE2);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
 
-section {
-padding: 20px;
-margin: 20px;
-background-color: white;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-h2 {
-color: #4B0082;
-margin-bottom: 10px;
-}
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
 
-ul {
-list-style: none;
-padding: 0;
-}
+    section {
+      background: white;
+      margin: 30px auto;
+      padding: 25px;
+      width: 90%;
+      max-width: 900px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(30px);
+      opacity: 0;
+      animation: slideIn 0.8s ease-out forwards;
+    }
 
-ul li::before {
-content: "• ";
-color: #4B0082;
-}
+    section:nth-child(even) {
+      animation-delay: 0.3s;
+    }
 
-.contact-info {
-display: flex;
-flex-direction: column;
-gap: 5px;
-}
+    h2 {
+      color: #4B0082;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
 
-footer {
-text-align: center;
-padding: 10px;
-font-size: 12px;
-color: #888;
-}
-</style>
+    ul {
+      list-style: none;
+    }
+
+    ul li::before {
+      content: '\2022';
+      color: #4B0082;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .contact-info span {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .contact-info a {
+      color: #4B0082;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 30px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Asma Almurjan</h1>
+    <p>Information Technology Student | Web Developer | UX Enthusiast</p>
+  </header>
 
-<header>
-<h1>Asma Almurjan</h1>
-<p>Information Technology Student | Web Developer | UX Enthusiast</p>
-</header>
+  <section>
+    <h2>Contact Information</h2>
+    <div class="contact-info">
+      <span>📧 <a href="mailto:asma.almurjan1@gmail.com">asma.almurjan1@gmail.com</a></span>
+      <span>🔗 <a href="https://www.linkedin.com/in/asma-almurjan-3428b5349/" target="_blank">LinkedIn Profile</a></span>
+    </div>
+  </section>
 
-<section>
-<h2>Contact Information</h2>
-<div class="contact-info">
-<span>📧 asma.almurjan1@gmail.com</span>
-<span>🔗 https://www.linkedin.com/in/asma-almurjan-3428b5349/</span>
-</div>
-</section>
+  <section>
+    <h2>Career Objective</h2>
+    <p>
+      Seeking to build a career in web development and user experience by applying my academic skills in real projects and developing innovative technical solutions.
+    </p>
+  </section>
 
-<section>
-<h2>Career Objective</h2>
-<p>
-Seeking to build a career in web development and user experience by applying my academic skills in real projects and developing innovative technical solutions.
-</p>
-</section>
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>User Interface Design (UI/UX)</li>
+      <li>Git and GitHub</li>
+      <li>Software Engineering</li>
+      <li>Software Project Management</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Skills</h2>
-<ul>
-<li>HTML, CSS, JavaScript</li>
-<li>User Interface Design (UI/UX)</li>
-<li>Git and GitHub</li>
-<li>Software Engineering</li>
-<li>Software Project Management</li>
-</ul>
-</section>
+  <section>
+    <h2>Experience / Projects</h2>
+    <ul>
+      <li>CaféGo Project – University Cafeteria Pre-order App</li>
+      <li>Resume Website (HTML + GitHub Pages)</li>
+      <li>Information Management System for a Hospital (Software Engineering Course Project)</li>
+      <li>Developed an Android App (Java + XML + Firebase)</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Experience / Projects</h2>
-<ul>
-<li>CaféGo Project – University Cafeteria Pre-order App</li>
-<li>Resume Website (HTML + GitHub Pages)</li>
-<li>Information Management System for a Hospital (Software Engineering Course Project)</li>
-<li>Developed an Android App (Java + XML + Firebase)</li>
-</ul>
-</section>
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li>Bachelor of Information Technology – Qassim University</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Education</h2>
-<ul>
-<li>Bachelor of Information Technology – Qassim University</li>
-</ul>
-</section>
-
-<footer>
-&copy; 2025 - Designed and Developed by Asma Almurjan 
-</footer>
-
+  <footer>
+    &copy; 2025 - Designed and Developed by Asma Almurjan
+  </footer>
 </body>
 </html>
