@@ -56,19 +56,24 @@
       width: 200%;
       height: 200%;
       background: radial-gradient(circle, rgba(138,43,226,0.2) 0%, rgba(0,0,0,0) 70%);
-      animation: pulseGlow 2s ease-out;
       pointer-events: none;
       z-index: 0;
-    }
-
-    section > * {
-      position: relative;
-      z-index: 1;
+      opacity: 0;
     }
 
     section.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    section.visible::before {
+      animation: pulseGlow 2s ease-out;
+      opacity: 1;
+    }
+
+    section > * {
+      position: relative;
+      z-index: 1;
     }
 
     h2 {
