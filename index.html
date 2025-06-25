@@ -35,7 +35,7 @@
     section {
       background: linear-gradient(135deg, #0a0f3c, #1b2254);
       background-size: 400% 400%;
-      animation: gradientMove 8s ease infinite;
+      animation: gradientMove 8s ease infinite, shimmer 3s infinite linear;
       margin: 30px auto;
       padding: 25px;
       width: 90%;
@@ -45,6 +45,24 @@
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.6s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shimmer 4s infinite;
     }
 
     section.visible {
@@ -114,6 +132,15 @@
       }
       100% {
         background-position: 0% 50%;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
       }
     }
   </style>
@@ -187,4 +214,3 @@
   </script>
 </body>
 </html>
-
