@@ -21,21 +21,16 @@
     }
 
     header {
-      background: linear-gradient(to right, #4B0082, #8A2BE2);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+      width: 100%;
+      height: 250px;
+      background-image: url('asma.almurjan1@gmail.com.png');
+
+      background-size: cover;
+      background-position: center;
       animation: fadeIn 1.5s ease-in-out;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     section {
@@ -46,13 +41,14 @@
       max-width: 900px;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transform: translateY(30px);
       opacity: 0;
-      animation: slideIn 0.8s ease-out forwards;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
     }
 
-    section:nth-child(even) {
-      animation-delay: 0.3s;
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
@@ -107,24 +103,10 @@
         transform: scale(1);
       }
     }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(30px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Asma Almurjan</h1>
-    <p>Information Technology Student | Web Developer | UX Enthusiast</p>
-  </header>
+  <header></header>
 
   <section>
     <h2>Contact Information</h2>
@@ -172,5 +154,23 @@
   <footer>
     &copy; 2025 - Designed and Developed by Asma Almurjan
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
