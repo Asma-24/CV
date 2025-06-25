@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
@@ -146,8 +146,72 @@
     }
   </style>
 </head>
-<body style="background-image: url('pic1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh;">
-  <h1 style="color:white; text-align:center; padding-top: 100px;">هل ترى الخلفية؟</h1>
-</body>
+<body>
+  <header></header>
 
+  <section>
+    <h2>Career Objective</h2>
+    <p>
+      Seeking to build a career in web development and user experience by applying my academic skills in real projects and developing innovative technical solutions.
+    </p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>User Interface Design (UI/UX)</li>
+      <li>Git and GitHub</li>
+      <li>Software Engineering</li>
+      <li>Software Project Management</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Experience / Projects</h2>
+    <ul>
+      <li>CaféGo Project – University Cafeteria Pre-order App</li>
+      <li>Resume Website (HTML + GitHub Pages)</li>
+      <li>Information Management System for a Hospital (Software Engineering Course Project)</li>
+      <li>Developed an Android App (Java + XML + Firebase)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li>Bachelor of Information Technology – Qassim University</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact Information</h2>
+    <div class="contact-info">
+      <span>📧 <a href="mailto:asma.almurjan1@gmail.com">asma.almurjan1@gmail.com</a></span>
+      <span>🔗 <a href="https://www.linkedin.com/in/asma-almurjan-3428b5349/" target="_blank">LinkedIn Profile</a></span>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 - Designed and Developed by Asma Almurjan
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
 </html>
