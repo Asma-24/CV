@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #000; /* Changed background behind sections to black */
+      background: #000;
       color: #fff;
       line-height: 1.6;
       overflow-x: hidden;
@@ -33,7 +33,9 @@
     }
 
     section {
-      background: #000;
+      background: linear-gradient(135deg, #0a0f3c, #1b2254);
+      background-size: 400% 400%;
+      animation: gradientMove 8s ease infinite;
       margin: 30px auto;
       padding: 25px;
       width: 90%;
@@ -100,6 +102,18 @@
       to {
         opacity: 1;
         transform: scale(1);
+      }
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
       }
     }
   </style>
@@ -173,3 +187,4 @@
   </script>
 </body>
 </html>
+
