@@ -44,33 +44,21 @@
       transform: translateY(30px);
       transition: all 0.6s ease-out;
       position: relative;
-      overflow: visible;
+      overflow: hidden;
       margin-left: 60px;
     }
 
     section::before {
       content: "";
       position: absolute;
-      top: 20%;
-      right: -140px;
-      width: 120px;
-      height: 120px;
-      opacity: 0.15;
+      top: -40%;
+      left: -40%;
+      width: 180%;
+      height: 180%;
+      background: radial-gradient(circle, rgba(138,43,226,0.3) 0%, rgba(0,0,0,0) 60%);
       pointer-events: none;
-      background-image: url('data:image/svg+xml;utf8,\
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="white" stroke-width="2">\
-        <rect x="10" y="10" width="30" height="30" rx="5" ry="5"/>\
-        <rect x="60" y="10" width="40" height="20" rx="3" ry="3"/>\
-        <circle cx="30" cy="80" r="10"/>\
-        <line x1="30" y1="90" x2="80" y2="90"/>\
-        <line x1="80" y1="90" x2="80" y2="60"/>\
-        <circle cx="80" cy="60" r="8"/>\
-      </svg>');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
       z-index: 0;
-      transform: rotate(10deg);
+      opacity: 0;
     }
 
     section.visible {
@@ -80,7 +68,7 @@
 
     section.visible::before {
       animation: pulseGlow 2s ease-out;
-      opacity: 0.15; /* خليه ثابت شوي، مش قوي */
+      opacity: 1;
     }
 
     section > * {
@@ -145,15 +133,15 @@
     @keyframes pulseGlow {
       0% {
         transform: scale(0.8);
-        opacity: 0.15;
+        opacity: 0.3;
       }
       50% {
         transform: scale(1);
-        opacity: 0.3;
+        opacity: 0.6;
       }
       100% {
         transform: scale(1.2);
-        opacity: 0.15;
+        opacity: 0;
       }
     }
   </style>
