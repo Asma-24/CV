@@ -190,6 +190,38 @@
         opacity: 0;
       }
     }
+
+    /* =======================================
+       Light Mode Styles for Light Theme Support
+    ======================================= */
+    @media (prefers-color-scheme: light) {
+      body {
+        background-color: #fff
+        color: #222;
+      }
+
+      section {
+        background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(240,240,240,0.85));
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      }
+
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #aaa;
+      }
+
+      ul li::before {
+        color: #6a0dad;
+      }
+
+      footer {
+        color: #555;
+      }
+
+      .contact-info a {
+        color: #6a0dad;
+      }
+    }
   </style>
 </head>
 <body>
