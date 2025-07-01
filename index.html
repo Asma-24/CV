@@ -5,34 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV - Asma Almurjan</title>
 
-  <!-- Link to Google Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset default margins and paddings */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Set page background */
+    /* Base body */
     body {
-      background-image: url('pic3.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff;
+      background-color: #ffffff; /* Light Mode background */
+      color: #000;
+      font-family: 'Inter', sans-serif;
       transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* Remove spacing from html and body */
     body, html {
       padding: 0;
       margin: 0;
     }
 
-    /* Header styling with logo background */
     header {
       width: 100%;
       height: 30vh;
@@ -45,11 +41,8 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 0;
-      margin-top: 0;
     }
 
-    /* Header styling for smaller screens */
     @media (max-width: 600px) {
       header {
         height: 200px;
@@ -57,24 +50,23 @@
       }
     }
 
-    /* Section styling */
+    /* Sections light mode */
     section {
-      background: linear-gradient(135deg, rgba(10,15,60,0.85), rgba(27,34,84,0.85));
+      background: #f0f0f0; /* Light grey */
       margin: 30px auto;
       padding: 25px;
       width: 70%;
       max-width: 900px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.6s ease-out;
       position: relative;
       overflow: hidden;
-      color: #fff;
+      color: inherit;
     }
 
-    /* Radial glow effect behind section */
     section::before {
       content: "";
       position: absolute;
@@ -88,39 +80,33 @@
       opacity: 0;
     }
 
-    /* Section visible state */
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Activate radial glow animation when visible */
     section.visible::before {
       animation: pulseGlow 2s ease-out;
       opacity: 1;
     }
 
-    /* Keep section content above ::before layer */
     section > * {
       position: relative;
       z-index: 1;
     }
 
-    /* Section headings */
     h2 {
-      color: #f0f0ff;
+      color: inherit;
       margin-bottom: 15px;
       border-bottom: 2px solid #444;
       padding-bottom: 5px;
       font-family: 'Georgia', serif;
     }
 
-    /* Remove default list styling */
     ul {
       list-style: none;
     }
 
-    /* Custom bullet for list items */
     ul li::before {
       content: '\2022';
       color: #8A2BE2;
@@ -130,7 +116,6 @@
       margin-left: -1em;
     }
 
-    /* Contact info styling */
     .contact-info span {
       display: block;
       margin-bottom: 8px;
@@ -145,46 +130,34 @@
       text-decoration: underline;
     }
 
-    /* Footer styling */
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      color: #aaa;
+      color: #666;
       margin-top: 30px;
     }
 
-    /* Dark mode styles */
+    /* Dark Mode */
     body.dark-mode {
-      background-image: none;
-      background-color: #121212;
-      color: #ddd;
+      background-color: #000; /* fallback */
+      background-image: url('pic3.png'); /* Dark Mode background */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
     }
 
     body.dark-mode section {
-      background: linear-gradient(135deg, rgba(30,30,30,0.9), rgba(50,50,50,0.9));
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-      color: #ddd;
-    }
-
-    body.dark-mode h2 {
-      color: #ccc;
-      border-bottom: 2px solid #666;
-    }
-
-    body.dark-mode ul li::before {
-      color: #bb86fc;
-    }
-
-    body.dark-mode .contact-info a {
-      color: #bb86fc;
+      background: linear-gradient(135deg, rgba(10,15,60,0.85), rgba(27,34,84,0.85));
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
 
     body.dark-mode footer {
-      color: #666;
+      color: #aaa;
     }
 
-    /* Fade-in animation for header */
+    /* Animations */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -196,18 +169,6 @@
       }
     }
 
-    /* Shimmer animation (not currently used) */
-    @keyframes shimmer {
-      0% {
-        transform: translateX(-100%);
-      }
-      100% {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-    }
-
-    /* Pulse glow animation */
     @keyframes pulseGlow {
       0% {
         transform: scale(0.8);
@@ -223,47 +184,46 @@
       }
     }
 
-    /* Floating toggle button styles */
-    #theme-toggle {
+    /* Floating Theme Toggle Button */
+    .theme-toggle {
       position: fixed;
       top: 20px;
       left: 20px;
-      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      background: rgba(255,255,255,0.9);
       border: none;
       border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 24px;
-      color: #fff;
+      width: 40px;
+      height: 40px;
       cursor: pointer;
-      z-index: 9999;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.3s ease;
-      user-select: none;
+      font-size: 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
     }
 
-    #theme-toggle:hover {
-      background: rgba(0,0,0,0.8);
+    .theme-toggle:hover {
+      background: rgba(230,230,230,1);
     }
 
-    body.dark-mode #theme-toggle {
-      background: rgba(255, 255, 255, 0.3);
-      color: #121212;
+    body.dark-mode .theme-toggle {
+      background: rgba(40,40,40,0.8);
+      color: #fff;
     }
 
-    body.dark-mode #theme-toggle:hover {
-      background: rgba(255, 255, 255, 0.5);
+    body.dark-mode .theme-toggle:hover {
+      background: rgba(60,60,60,0.9);
     }
   </style>
 </head>
 <body>
-  <!-- Header with logo background -->
-  <header></header>
+  <!-- Floating Theme Toggle Button -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">🌙</button>
 
-  <!-- Floating button for toggling theme (Light / Dark Mode) -->
-  <button id="theme-toggle" aria-label="Toggle Light/Dark Mode" title="Toggle Light/Dark Mode">🌞</button>
+  <!-- Header -->
+  <header></header>
 
   <!-- Section: Career Objective -->
   <section>
@@ -285,7 +245,7 @@
     </ul>
   </section>
 
-  <!-- Section: Experience and Projects -->
+  <!-- Section: Experience / Projects -->
   <section>
     <h2>Experience / Projects</h2>
     <ul>
@@ -318,46 +278,27 @@
     &copy; 2025 - Designed and Developed by Asma Almurjan
   </footer>
 
-  <!-- Script for observing sections and triggering animations -->
+  <!-- Script for toggling dark mode -->
   <script>
+    // Animate sections on scroll
     const sections = document.querySelectorAll('section');
-
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
 
-    // Theme toggle button logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const bodyEl = document.body;
-
-    // Load saved theme from localStorage
-    if (localStorage.getItem('theme') === 'dark') {
-      bodyEl.classList.add('dark-mode');
-      toggleBtn.textContent = '🌙';
-    } else {
-      toggleBtn.textContent = '🌞';
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      bodyEl.classList.toggle('dark-mode');
-      if (bodyEl.classList.contains('dark-mode')) {
-        toggleBtn.textContent = '🌙';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        toggleBtn.textContent = '🌞';
-        localStorage.setItem('theme', 'light');
-      }
+    // Toggle dark mode
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
     });
   </script>
 </body>
 </html>
+
